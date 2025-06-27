@@ -1,0 +1,126 @@
+/* General Styles */
+
+    html { scroll-behavior: smooth; }
+    .nav-link { transition: color 0.3s ease; }
+    .nav-link.active { color: #D00000; }
+    .swiper-slide { display: flex; align-items: center; justify-content: center; }
+    .pastors-container { overflow-x: auto; scrollbar-width: thin; }
+    .pastors-container::-webkit-scrollbar { height: 8px; }
+    .pastors-container::-webkit-scrollbar-thumb { background: #D00000; border-radius: 4px; }
+    .hero-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images/donate/makau.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  /* Add these styles to prevent horizontal overflow */
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+    
+    /* Modal improvements for mobile */
+    .modal-content {
+      max-width: 95%;
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    /* About section improvements */
+    .about-section h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #dc2626;
+    }
+    
+    /* Mobile-specific styles */
+    @media (max-width: 768px) {
+      .swiper-slide h1 {
+        font-size: 2rem;
+      }
+      
+      .swiper-slide p {
+        font-size: 1rem;
+      }
+      
+      .modal-content {
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      
+      .pastors-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .about-section {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('images/sange worship.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .sermon-section {
+      background-image: linear-gradient(rgba(27, 38, 59, 0.9), rgba(27, 38, 59, 0.9)), 
+                        url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .prayer-section {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                        url('images/WhatsApp Image 2025-02-25 at 19.41.33_5a040e11.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .footer-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+    .footer-wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 50px;
+    }
+    .footer-wave .shape-fill {
+      fill: #111827;
+    }
+    .newsletter-input {
+      border-radius: 30px 0 0 30px;
+    }
+    .newsletter-btn {
+      border-radius: 0 30px 30px 0;
+    }
+
+      /* Project Section Styles */
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .modal-content {
+    max-width: 95%;
+  }
+  
+  @media (max-width: 768px) {
+    .project-card {
+      max-width: 100%;
+    }
+    
+    .modal-content {
+      padding: 1rem;
+    }
+    
+    #project-modal-title {
+      font-size: 1.5rem;
+    }
+  }

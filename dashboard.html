@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Redeemed Gospel Church</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .sidebar {
+      transition: all 0.3s;
+    }
+    .sidebar.collapsed {
+      width: 70px;
+    }
+    .sidebar.collapsed .sidebar-text {
+      display: none;
+    }
+    .main-content {
+      transition: all 0.3s;
+    }
+    .sidebar.collapsed + .main-content {
+      margin-left: 70px;
+    }
+    .active-nav-item {
+      background-color: #f3f4f6;
+      border-left: 4px solid #dc2626;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <!-- Sidebar -->
+    <div class="sidebar bg-gray-800 text-white w-64 flex flex-col sidebar">
+      <div class="p-4 flex items-center justify-between border-b border-gray-700">
+        <div class="flex items-center">
+          <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center mr-3">
+            <span class="text-red-600 font-bold">RGC</span>
+          </div>
+          <span class="sidebar-text font-bold">RGC Admin</span>
+        </div>
+        <button id="sidebar-toggle" class="text-gray-400 hover:text-white">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto">
+        <nav class="p-4">
+          <div class="mb-8">
+            <p class="text-gray-400 uppercase text-xs sidebar-text mb-2">Main</p>
+            <a href="#dashboard" class="flex items-center py-2 px-3 rounded active-nav-item">
+              <i class="fas fa-tachometer-alt mr-3"></i>
+              <span class="sidebar-text">Dashboard</span>
+            </a>
+          </div>
+          
+          <div class="mb-8">
+            <p class="text-gray-400 uppercase text-xs sidebar-text mb-2">Content</p>
+            <a href="#home-content" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-home mr-3"></i>
+              <span class="sidebar-text">Home Page</span>
+            </a>
+            <a href="#about-content" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-info-circle mr-3"></i>
+              <span class="sidebar-text">About Page</span>
+            </a>
+            <a href="#sermons-content" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-video mr-3"></i>
+              <span class="sidebar-text">Sermons</span>
+            </a>
+            <a href="#projects-content" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-project-diagram mr-3"></i>
+              <span class="sidebar-text">Projects</span>
+            </a>
+            <a href="#contact-content" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-envelope mr-3"></i>
+              <span class="sidebar-text">Contact</span>
+            </a>
+          </div>
+          
+          <div class="mb-8">
+            <p class="text-gray-400 uppercase text-xs sidebar-text mb-2">Donations</p>
+            <a href="#donations" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-donate mr-3"></i>
+              <span class="sidebar-text">Donations</span>
+            </a>
+            <a href="#payment-methods" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-credit-card mr-3"></i>
+              <span class="sidebar-text">Payment Methods</span>
+            </a>
+          </div>
+          
+          <div class="mb-8">
+            <p class="text-gray-400 uppercase text-xs sidebar-text mb-2">Forms</p>
+            <a href="#prayer-requests" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-pray mr-3"></i>
+              <span class="sidebar-text">Prayer Requests</span>
+            </a>
+            <a href="#contact-forms" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-file-alt mr-3"></i>
+              <span class="sidebar-text">Contact Forms</span>
+            </a>
+          </div>
+          
+          <div>
+            <p class="text-gray-400 uppercase text-xs sidebar-text mb-2">Settings</p>
+            <a href="#users" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-users mr-3"></i>
+              <span class="sidebar-text">Users</span>
+            </a>
+            <a href="#settings" class="flex items-center py-2 px-3 rounded hover:bg-gray-700">
+              <i class="fas fa-cog mr-3"></i>
+              <span class="sidebar-text">Settings</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content flex-1 overflow-y-auto ml-64">
+      <!-- Top Navigation -->
+      <header class="bg-white shadow-sm p-4 flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Dashboard</h1>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button class="text-gray-600 hover:text-gray-900">
+              <i class="fas fa-bell"></i>
+              <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
+            </button>
+          </div>
+          <div class="flex items-center">
+            <img src="https://via.placeholder.com/40x40" alt="User" class="w-8 h-8 rounded-full mr-2">
+            <span>Admin</span>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Dashboard Content -->
+      <main class="p-6">
+        <!-- Metrics Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500">Total Visitors</p>
+                <h2 class="text-2xl font-bold">1,248</h2>
+                <p class="text-green-500 text-sm"><i class="fas fa-arrow-up mr-1"></i> 12% from last week</p>
+              </div>
+              <div class="bg-red-100 p-3 rounded-full">
+                <i class="fas fa-users text-red-600"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500">Sermon Views</p>
+                <h2 class="text-2xl font-bold">856</h2>
+                <p class="text-green-500 text-sm"><i class="fas fa-arrow-up mr-1"></i> 8% from last week</p>
+              </div>
+              <div class="bg-blue-100 p-3 rounded-full">
+                <i class="fas fa-video text-blue-600"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500">Donations</p>
+                <h2 class="text-2xl font-bold">KES 124,500</h2>
+                <p class="text-green-500 text-sm"><i class="fas fa-arrow-up mr-1"></i> 15% from last month</p>
+              </div>
+              <div class="bg-green-100 p-3 rounded-full">
+                <i class="fas fa-donate text-green-600"></i>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-gray-500">Prayer Requests</p>
+                <h2 class="text-2xl font-bold">42</h2>
+                <p class="text-red-500 text-sm"><i class="fas fa-arrow-down mr-1"></i> 5% from last week</p>
+              </div>
+              <div class="bg-purple-100 p-3 rounded-full">
+                <i class="fas fa-pray text-purple-600"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Weekly Visitors</h2>
+            <canvas id="visitorsChart" height="250"></canvas>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-lg font-semibold mb-4">Traffic Sources</h2>
+            <canvas id="trafficChart" height="250"></canvas>
+          </div>
+        </div>
+        
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-lg shadow mb-6">
+          <div class="p-6 border-b border-gray-200">
+            <h2 class="text-lg font-semibold">Recent Activity</h2>
+          </div>
+          <div class="divide-y divide-gray-200">
+            <div class="p-4 flex items-center">
+              <div class="bg-red-100 p-3 rounded-full mr-4">
+                <i class="fas fa-video text-red-600"></i>
+              </div>
+              <div>
+                <p class="font-medium">New sermon uploaded</p>
+                <p class="text-gray-500 text-sm">"Walking in Abundance" by Rev. Grace Omondi</p>
+              </div>
+              <div class="ml-auto text-sm text-gray-500">2 hours ago</div>
+            </div>
+            <div class="p-4 flex items-center">
+              <div class="bg-green-100 p-3 rounded-full mr-4">
+                <i class="fas fa-donate text-green-600"></i>
+              </div>
+              <div>
+                <p class="font-medium">New donation received</p>
+                <p class="text-gray-500 text-sm">KES 5,000 from John Doe</p>
+              </div>
+              <div class="ml-auto text-sm text-gray-500">5 hours ago</div>
+            </div>
+            <div class="p-4 flex items-center">
+              <div class="bg-purple-100 p-3 rounded-full mr-4">
+                <i class="fas fa-pray text-purple-600"></i>
+              </div>
+              <div>
+                <p class="font-medium">New prayer request</p>
+                <p class="text-gray-500 text-sm">From Jane Smith: "Pray for my family's health"</p>
+              </div>
+              <div class="ml-auto text-sm text-gray-500">1 day ago</div>
+            </div>
+            <div class="p-4 flex items-center">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-user text-blue-600"></i>
+              </div>
+              <div>
+                <p class="font-medium">New user registered</p>
+                <p class="text-gray-500 text-sm">Robert Johnson signed up for newsletter</p>
+              </div>
+              <div class="ml-auto text-sm text-gray-500">2 days ago</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Content Management Section -->
+        <div class="bg-white rounded-lg shadow">
+          <div class="p-6 border-b border-gray-200">
+            <h2 class="text-lg font-semibold">Quick Content Updates</h2>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Home Page Updates -->
+              <div class="border rounded-lg p-4">
+                <h3 class="font-medium mb-3">Home Page</h3>
+                <div class="space-y-3">
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Update Slider Images
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Edit Mission Statement
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Update Service Times
+                  </button>
+                </div>
+              </div>
+              
+              <!-- About Page Updates -->
+              <div class="border rounded-lg p-4">
+                <h3 class="font-medium mb-3">About Page</h3>
+                <div class="space-y-3">
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Edit Church History
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Update Leadership Team
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Manage Testimonials
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Sermons Updates -->
+              <div class="border rounded-lg p-4">
+                <h3 class="font-medium mb-3">Sermons</h3>
+                <div class="space-y-3">
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Upload New Sermon
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Edit Sermon Details
+                  </button>
+                  <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded text-left">
+                    Update Featured Sermon
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Toggle sidebar
+    document.getElementById('sidebar-toggle').addEventListener('click', function() {
+      document.querySelector('.sidebar').classList.toggle('collapsed');
+    });
+
+    // Initialize charts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Visitors Chart
+      const visitorsCtx = document.getElementById('visitorsChart').getContext('2d');
+      const visitorsChart = new Chart(visitorsCtx, {
+        type: 'line',
+        data: {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Visitors',
+            data: [120, 190, 170, 220, 180, 250, 300],
+            backgroundColor: 'rgba(220, 38, 38, 0.1)',
+            borderColor: 'rgba(220, 38, 38, 1)',
+            borderWidth: 2,
+            tension: 0.4,
+            fill: true
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      // Traffic Chart
+      const trafficCtx = document.getElementById('trafficChart').getContext('2d');
+      const trafficChart = new Chart(trafficCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Direct', 'Social', 'Search', 'Referral'],
+          datasets: [{
+            data: [45, 25, 20, 10],
+            backgroundColor: [
+              'rgba(220, 38, 38, 0.8)',
+              'rgba(59, 130, 246, 0.8)',
+              'rgba(16, 185, 129, 0.8)',
+              'rgba(139, 92, 246, 0.8)'
+            ],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'right'
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-900" data-aos="fade-up">Our Ministries & Outreach</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Building Project -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="building" data-aos="zoom-in" data-aos-delay="0">
+        <img src="images/project/building-project.jpg" alt="Building Project" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Building</h3>
+          <p class="text-gray-600 mb-4">Building The temple of God in Shauri Estate, Eldoret.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+
+      <!-- Youth Empowerment -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="youth-empowerment" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/project/youths.jpg" alt="Youth Empowerment" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Youth Empowerment</h3>
+          <p class="text-gray-600 mb-4">Weekly programs mentoring teens through Bible study and life skills training.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+
+      <!-- Men's Fellowship -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="mens-fellowship" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/project/2022_12_08_12_35_IMG_4025.JPG" alt="Men's Fellowship" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Men's Fellowship</h3>
+          <p class="text-gray-600 mb-4">Bringing hope and restoration to men and their families.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+
+      <!-- Women's Fellowship -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="womens-fellowship" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/josphine-worship.jpg" alt="Women's Fellowship" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Women's Fellowship</h3>
+          <p class="text-gray-600 mb-4">Monthly gatherings for spiritual growth, encouragement, and fellowship.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+
+      <!-- Missions Support -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="missions-support" data-aos="zoom-in" data-aos-delay="400">
+        <img src="images/project/mision1.jpg" alt="Missions Support" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Missions Support</h3>
+          <p class="text-gray-600 mb-4">Partnering with missionaries globally to spread the Gospel.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+
+      <!-- Office Block -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer project-card" data-modal="office-block" data-aos="zoom-in" data-aos-delay="500">
+        <img src="images/project/office block.jpg" alt="Office Block" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-900">Office Block</h3>
+          <p class="text-gray-600 mb-4">Building Offices for administrative duties.</p>
+          <span class="text-red-600 font-medium hover:underline">Learn More →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="project-modal">
+    <div class="bg-white p-4 md:p-8 rounded-lg max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto border-2 border-gray-300 modal-content">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900" id="project-modal-title">Project Details</h2>
+        <button class="text-red-600 hover:text-gray-900 text-2xl modal-close">×</button>
+      </div>
+      <div class="text-gray-700 text-sm md:text-base" id="project-modal-content">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Project Section Styles */
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .modal-content {
+    max-width: 95%;
+  }
+  
+  @media (max-width: 768px) {
+    .project-card {
+      max-width: 100%;
+    }
+    
+    .modal-content {
+      padding: 1rem;
+    }
+    
+    #project-modal-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  // Project Modal Content
+  const projectDetails = {
+    "building": {
+      title: "Church Building Project",
+      content: `
+        <img src="images/project/building-project.jpg" alt="Building Project" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">We are currently constructing a new worship sanctuary in Shauri Estate, Eldoret to accommodate our growing congregation and serve the community better.</p>
+        <h4 class="font-semibold text-lg mb-2">Project Details:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Phase 1: Foundation and structure - Completed</li>
+          <li>Phase 2: Roofing and interior - In progress</li>
+          <li>Phase 3: Finishing and furnishing - Upcoming</li>
+        </ul>
+        <p>Estimated completion: December 2025</p>
+      `
+    },
+    "youth-empowerment": {
+      title: "Youth Empowerment Program",
+      content: `
+        <img src="images/project/youths.jpg" alt="Youth Empowerment" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">Our youth program focuses on developing young people spiritually, academically, and socially through various initiatives.</p>
+        <h4 class="font-semibold text-lg mb-2">Programs Include:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Weekly Bible study and discipleship</li>
+          <li>Career guidance and mentorship</li>
+          <li>Leadership development workshops</li>
+          <li>Community service projects</li>
+        </ul>
+        <p>Meeting every Friday at 5:00 PM</p>
+      `
+    },
+    // Add similar content for other projects...
+    "mens-fellowship": {
+      title: "Men's Fellowship Ministry",
+      content: `
+        <img src="images/project/2022_12_08_12_35_IMG_4025.JPG" alt="Men's Fellowship" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">Our Men's Fellowship provides a supportive environment for men to grow spiritually and strengthen their families.</p>
+        <h4 class="font-semibold text-lg mb-2">Activities:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Monthly prayer breakfasts</li>
+          <li>Bible study groups</li>
+          <li>Family leadership training</li>
+          <li>Community outreach</li>
+        </ul>
+        <p>Meeting every 2nd Saturday of the month at 8:00 AM</p>
+      `
+    },
+    "womens-fellowship": {
+      title: "Women's Fellowship Ministry",
+      content: `
+        <img src="images/josphine-worship.jpg" alt="Women's Fellowship" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">The Women's Fellowship ministers to women of all ages through spiritual growth opportunities and practical support.</p>
+        <h4 class="font-semibold text-lg mb-2">Programs Include:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Monthly fellowship meetings</li>
+          <li>Bible study groups</li>
+          <li>Skill development workshops</li>
+          <li>Prayer and counseling</li>
+        </ul>
+        <p>Meeting every 3rd Saturday of the month at 10:00 AM</p>
+      `
+    },
+    "missions-support": {
+      title: "Missions Support Program",
+      content: `
+        <img src="images/project/mision1.jpg" alt="Missions Support" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">We support missionaries both locally and internationally through prayer and financial support.</p>
+        <h4 class="font-semibold text-lg mb-2">Current Mission Fields:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Local church planting initiatives</li>
+          <li>Missionaries in rural Kenya</li>
+          <li>International missions in East Africa</li>
+        </ul>
+        <p>Contact us to learn how you can support our missions work.</p>
+      `
+    },
+    "office-block": {
+      title: "Church Office Block Project",
+      content: `
+        <img src="images/project/office block.jpg" alt="Office Block" class="w-full h-auto rounded-lg mb-4">
+        <p class="mb-4">We are constructing an office block to better serve our congregation and community with administrative services.</p>
+        <h4 class="font-semibold text-lg mb-2">Features:</h4>
+        <ul class="list-disc pl-6 mb-4 space-y-2">
+          <li>Pastoral offices</li>
+          <li>Counseling rooms</li>
+          <li>Administrative workspace</li>
+          <li>Resource center</li>
+        </ul>
+        <p>Construction began in January 2025 with expected completion in June 2026.</p>
+      `
+    }
+  };
+
+  // Modal Handling
+  document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectModal = document.getElementById('project-modal');
+    const modalTitle = document.getElementById('project-modal-title');
+    const modalContent = document.getElementById('project-modal-content');
+    const closeButtons = document.querySelectorAll('.modal-close');
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const projectId = this.getAttribute('data-modal');
+        const project = projectDetails[projectId];
+        
+        if (project) {
+          modalTitle.textContent = project.title;
+          modalContent.innerHTML = project.content;
+          projectModal.classList.remove('hidden');
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        projectModal.classList.add('hidden');
+      });
+    });
+
+    // Close modal when clicking outside
+    projectModal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.add('hidden');
+      }
+    });
+  });
+</script>

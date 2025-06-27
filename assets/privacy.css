@@ -1,0 +1,75 @@
+/* General Styles */
+html { 
+  scroll-behavior: smooth; 
+}
+.nav-link { 
+  transition: color 0.3s ease; 
+}
+.nav-link.active { 
+  color: #D00000; 
+}
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('images/donate/makau.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.footer-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.footer-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+.footer-wave .shape-fill {
+  fill: #111827;
+}
+.newsletter-input {
+  border-radius: 30px 0 0 30px;
+}
+.newsletter-btn {
+  border-radius: 0 30px 30px 0;
+}
+
+/* Privacy Page Specific Styles */
+.content-section {
+  background-color: #ffffff; /* White background for clean readability */
+  padding: 4rem 1rem; /* Matches py-16 and px-4 from index */
+}
+.content-section h2 {
+  color: #111827; /* Dark gray for headings, consistent with index */
+  font-weight: 700; /* Bold, matches text-4xl font-bold */
+  font-size: 2.25rem; /* Matches text-4xl */
+  margin-bottom: 1.5rem; /* Matches mb-6 */
+  text-align: center; /* Consistent centering from index */
+}
+.content-section h3 {
+  color: #D00000; /* Red for subheadings, matches text-red-600 */
+  font-weight: 600; /* Semibold, matches font-semibold */
+  font-size: 1.5rem; /* Matches text-2xl */
+  margin-bottom: 1rem; /* Matches mb-4 */
+}
+.content-section p {
+  font-size: 1.125rem; /* Matches text-lg */
+  color: #374151; /* Gray-700 for readability */
+  margin-bottom: 1.5rem; /* Matches mb-6 */
+}
+.content-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem; /* Matches pl-6 */
+  margin-bottom: 1.5rem; /* Matches mb-6 */
+}
+.content-section li {
+  font-size: 1.125rem; /* Matches text-lg */
+  color: #374151; /* Gray-700 for consistency */
+  margin-bottom: 0.5rem; /* Spacing between list items */
+}
